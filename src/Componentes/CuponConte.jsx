@@ -1,45 +1,48 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, TouchableWithoutFeedback} from "react-native";
+import { StyleSheet, View, Text, TouchableWithoutFeedback } from "react-native";
 import StyleTxt from './StyleTxt';
 import theme from './theme';
-//importacion del icono
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import ModalComponent from './Modal';
 
-
-
-const CuponConte  = props =>{
+const CuponConte = props => {
     const [showModal, setShowModal] = useState(false);
 
     const toggleModal = () => {
-    setShowModal(!showModal); }
+        setShowModal(!showModal);
+       
+      };
     
 
-    return(
+    
+
+    return (
         <View style={styles.contElement}>
-            <StyleTxt fontSizes = 'subHeding' >{props.titulo}</StyleTxt>
-            <TouchableWithoutFeedback onPress={toggleModal}> 
+            <StyleTxt fontSize = 'subHeading'>{props.title}</StyleTxt>
+            <TouchableWithoutFeedback onPress={toggleModal}>
                 <FontAwesome5 name="bookmark" style={styles.bookmarkIcon} />
-            </TouchableWithoutFeedback> 
-            <ModalComponent visible={showModal} onClose={toggleModal} />
+            </TouchableWithoutFeedback>
+            <ModalComponent visible={showModal} onClose={toggleModal} id = {props.id} />
         </View>
-    )
-}
+    );
+};
 
 const styles = StyleSheet.create({
     contElement: {
         padding: 10,
-        backgroundColor: theme.colors.primary,
+        backgroundColor: theme.colors.secondary,
         width: "100%",
         height: "auto",
         flexDirection: "row",
         justifyContent: "space-between",
-        alignItems: "between",
-        marginBottom: 20,
-      },
-      bookmarkIcon: {
+        alignItems: "center",
+        //marginBottom: 0,
+        borderRadius: 10,
+    },
+    bookmarkIcon: {
         fontSize: 40,
         padding: 4,
-      },
-  })
-export default CuponConte
+    },
+});
+
+export default CuponConte;

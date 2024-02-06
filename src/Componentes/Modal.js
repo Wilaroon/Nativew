@@ -3,15 +3,17 @@ import { View, Text, StyleSheet, Modal, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 //import CupInfo from '../../screens/cupInfo';
 import CustomButton from "./Button";
+import theme from './theme';
 
 
-const ModalComponent = ({ visible, onClose }) => {
+const ModalComponent = ({ visible, onClose, id }) => {
 
   const navigation = useNavigation();
 
   const handleVerPantalla = () => {
     onClose(); // Cierra el modal antes de navegar a la pantalla
-    navigation.navigate('Informacion'); // Navega a la pantalla 'Pantalla'
+    navigation.navigate('Informacion', {id:id}); // Navega a la pantalla 'Pantalla'
+    
   };
   return (
     <Modal
@@ -49,7 +51,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#000000AA',
   },
   modalView: { //diseño del modal
-    backgroundColor: '#6E7B8B',
+    backgroundColor: theme.colors.tertiary,
     borderRadius: 20,
     padding: 35,
     alignItems: 'center',
@@ -64,7 +66,7 @@ const styles = StyleSheet.create({
   },
   
   textStyle: {
-    color: '#00f',
+    color: theme.colors.txtPrimary,
     fontSize: 50, 
     fontWeight: 'bold'
   },

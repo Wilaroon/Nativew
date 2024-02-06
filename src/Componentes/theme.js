@@ -1,11 +1,11 @@
 const theme = {
     colors: {
-      primary: '#7d8c68',      
-      secondary: '#a7b690',    
-      tertiary: '#a4b6ce',     
-      quaternary: '#cecfcf',   
+      primary: '#F5A200',      
+      secondary: '#FFFFFF',    
+      tertiary: '#F5F5F5',     
+      quaternary: '#a7b690',   
       quinary: '#a3a4a4',      
-      txtPrimary: '#ffffff',
+      txtPrimary: '#1f1f1f',
       txtSecondary: '#333333',
       txtTernary: '#444444',
     },
